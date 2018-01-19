@@ -76,6 +76,8 @@ MusicControlsInfo * musicControlsSettings;
 }
 
 - (void) create: (CDVInvokedUrlCommand *) command {
+    [self stealSession];
+    
     NSDictionary * musicControlsInfoDict = [command.arguments objectAtIndex:0];
     MusicControlsInfo * musicControlsInfo = [[MusicControlsInfo alloc] initWithDictionary:musicControlsInfoDict];
     musicControlsSettings = musicControlsInfo;
